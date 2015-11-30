@@ -1,0 +1,8 @@
+---
+applications:
+- name: test-log-sink
+  random-route: true
+  instances: 1
+  memory: 16M
+  stack: cflinuxfs2
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
