@@ -1,6 +1,6 @@
 # Test a CF installation's HTTPS syslog drain functionality
 
-## Overview
+## What this tests
 
 This script starts 2 Staticfile apps. The sink app is configured as a
 user-provided HTTPS syslog drain service, and bound to the generator app. The
