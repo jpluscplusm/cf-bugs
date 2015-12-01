@@ -31,7 +31,13 @@ $ make setup test
 This will set up some test entities, generate the test traffic, and check the
 sink's log output. A pass/fail message will be printed.
 
-After running the tests, run the following to clean up the test entities:
+To re-test, run:
+
+```
+$ make test
+```
+
+After you've finished, run the following to clean up the test entities:
 
 ```
 $ make clean

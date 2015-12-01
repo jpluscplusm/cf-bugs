@@ -3,8 +3,9 @@ SHELL=bash
 STABLE_RANDOM := $(shell echo $$RANDOM)
 
 default:
-	@echo 'Usage: "make setup test"'
-	@echo 'Afterwards: "make clean"'
+	@echo 'First run: "make setup test".'
+	@echo 'Repeat the test: "make test".'
+	@echo 'Afterwards: "make clean".'
 
 setup: announce-starting-setup create-sink
 clean: announce-starting-clean-up delete-sink delete-generator delete-service delete-routes
