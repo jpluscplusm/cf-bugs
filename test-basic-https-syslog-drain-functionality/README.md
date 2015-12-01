@@ -43,9 +43,6 @@ After you've finished, run the following to clean up the test entities:
 $ make clean
 ```
 
-At the end of cleaning up, this will prompt to delete all orphaned routes in
-the currently targetted CF space.
-
 ## Feedback
 
 Please email any feedback to the `contact+gh` user, where the domain is

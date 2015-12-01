@@ -8,7 +8,7 @@ default:
 	@echo 'Afterwards: "make clean".'
 
 setup: announce-starting-setup create-sink
-clean: announce-starting-clean-up delete-sink delete-generator delete-service delete-routes
+clean: announce-starting-clean-up delete-sink delete-generator delete-service
 test: \
   announce-cleaning-up-previous-tests delete-generator delete-service \
   announce-instantiating-test-entities create-service create-generator \
@@ -23,13 +23,11 @@ create-service:
 create-generator:
 	cf push -f manifest.yml.log-generator
 delete-sink:
-	cf delete -f test-log-sink
+	cf delete test-log-sink -f -r
 delete-generator:
-	cf delete -f test-log-generator
+	cf delete test-log-generator -f -r
 delete-service:
-	cf delete-service -f test-log-service
-delete-routes:
-	cf delete-orphaned-routes # deliberately require operator input here ...
+	cf delete-service test-log-service -f
 
 generate-traffic: export GENERATOR_FQDN=$(shell cf app test-log-generator | awk '/^urls:/{print $$2}')
 generate-traffic:
