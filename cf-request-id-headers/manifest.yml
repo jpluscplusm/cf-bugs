@@ -1,0 +1,8 @@
+---
+applications:
+- name: cf-request-id-headers-test
+  instances: 1
+  stack: cflinuxfs2
+  memory: 16M
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack
+  random-route: true
